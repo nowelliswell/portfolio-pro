@@ -4,34 +4,35 @@ const skillCategories = [
   {
     title: "Frontend",
     icon: Globe,
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux"],
+    skills: ["HTML", "CSS", "TypeScript", "Bootstrap", "Three.js", "JavaScript"],
   },
   {
     title: "Backend",
     icon: Server,
-    skills: ["Node.js", "Express", "NestJS", "Python", "REST APIs", "GraphQL"],
+    skills: ["Python (Flask)", "Go (Gorilla Mux)", "Dart (Shelf)", "REST APIs", "OpenCV"],
   },
   {
     title: "Database",
     icon: Database,
-    skills: ["PostgreSQL", "MongoDB", "Redis", "Prisma", "Supabase", "Firebase"],
+    skills: ["MySQL", "PostgreSQL", "SQLite", "ORM (GORM)", "Database Design"],
   },
   {
     title: "DevOps",
     icon: Layers,
-    skills: ["Docker", "AWS", "Vercel", "CI/CD", "Nginx", "Linux"],
+    skills: ["Git/GitHub", "Deployment (Heroku/Cloud/Server)", "CI/CD Basics", "Environment Config"],
   },
   {
     title: "Tools",
     icon: Wrench,
-    skills: ["Git", "VS Code", "Figma", "Postman", "Jest", "Webpack"],
+    skills: ["VS Code", "Postman", "Flask CLI", "Go Tools", "Dart Tools", "Debugging"],
   },
   {
     title: "Other",
     icon: Code,
-    skills: ["Agile/Scrum", "UI/UX", "SEO", "Testing", "Documentation", "Code Review"],
+    skills: ["REST API Design", "Object-Oriented Programming", "UI/UX Foundations", "Version Control (Git)", "Testing & Debugging", "Documentation"],
   },
 ];
+
 
 export function SkillsSection() {
   return (

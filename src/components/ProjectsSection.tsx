@@ -2,69 +2,102 @@ import { useState } from "react";
 import { ExternalLink, Github, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import hospitalRegPortalImg from "@/assets/hospital-reg-portal.png";
+import coffeordersystem from "@/assets/coffe-order-system.png";
+import clothbrand from "@/assets/clothbrand.png"
+import reportingweb from "@/assets/reportingsysm.png"
 
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-featured e-commerce platform with cart management, payment integration, and admin dashboard. Built with modern tech stack for optimal performance.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-    tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    liveUrl: "https://demo-ecommerce.com",
-    githubUrl: "https://github.com/demo/ecommerce",
+    title: "Hospitally Register Portal",
+    description:
+      "Modern outpatient registration web application designed to streamline hospital registration workflows with a clean and structured interface.",
+    image: hospitalRegPortalImg,
+    tech: ["TypeScript", "HTML", "CSS"],
+    liveUrl: "https://hospitally-register-portal.vercel.app/",
+    githubUrl: "https://github.com/nowelliswell/hospitally-register-portal",
     category: "Fullstack",
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Collaborative task management application with real-time updates, drag-and-drop interface, and team collaboration features.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-    tech: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
-    liveUrl: "https://demo-taskapp.com",
-    githubUrl: "https://github.com/demo/taskapp",
-    category: "Fullstack",
+    title: "Clothing Brand Website",
+    description:
+      "Responsive fashion brand website featuring modern UI design, product showcase, and smooth user experience.",
+    image: clothbrand,
+    tech: ["React", "JavaScript", "CSS"],
+    liveUrl: "https://cloth-brand-tawny.vercel.app/",
+    githubUrl: "https://github.com/nowelliswell/cloth-brand",
+    category: "Frontend",
   },
   {
     id: 3,
-    title: "Portfolio Dashboard",
-    description: "Interactive financial portfolio tracker with real-time market data, analytics charts, and investment insights.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    tech: ["React", "Chart.js", "REST API", "Tailwind CSS"],
-    liveUrl: "https://demo-portfolio.com",
-    githubUrl: "https://github.com/demo/portfolio",
+    title: "Coffee Shop Ordering System",
+    description:
+      "Interactive coffee shop web application with menu display and ordering interface built using modern frontend tooling.",
+    image: coffeordersystem,
+    tech: ["React", "Vite", "JavaScript"],
+    liveUrl: "https://coffeshopsystem.netlify.app/",
+    githubUrl: "https://github.com/nowelliswell/CoffeShop-System",
     category: "Frontend",
   },
   {
     id: 4,
-    title: "API Gateway Service",
-    description: "Scalable microservices API gateway with authentication, rate limiting, and comprehensive logging system.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
-    tech: ["Node.js", "Express", "Redis", "Docker"],
-    liveUrl: "https://api-gateway-demo.com",
-    githubUrl: "https://github.com/demo/api-gateway",
+    title: "SIMRS Error Reporting System",
+    description:
+      "Web-based reporting system to document and track hospital SIMRS issues, helping IT teams monitor and resolve system problems efficiently.",
+    image: reportingweb,
+    tech: ["Python", "Flask", "HTML"],
+    liveUrl: "https://laporansistemsimrs-production.up.railway.app/dashboard",
+    githubUrl: "https://github.com/nowelliswell/laporan_sistem_simrs",
     category: "Backend",
   },
   {
     id: 5,
-    title: "Blog CMS Platform",
-    description: "Content management system with markdown editor, image optimization, and SEO-friendly features.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-    tech: ["Next.js", "MDX", "PostgreSQL", "Vercel"],
-    liveUrl: "https://demo-blog-cms.com",
-    githubUrl: "https://github.com/demo/blog-cms",
-    category: "Fullstack",
+    title: "Face Recognition Attendance System",
+    description:
+      "Automated attendance system utilizing face recognition technology to identify users and store attendance records in a database.",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop",
+    tech: ["Python", "OpenCV", "MySQL"],
+    liveUrl: "",
+    githubUrl: "https://github.com/nowelliswell/absensi_facerecog",
+    category: "AI / Backend",
   },
   {
     id: 6,
-    title: "Weather Dashboard",
-    description: "Beautiful weather application with location-based forecasts, interactive maps, and customizable widgets.",
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
-    tech: ["React", "OpenWeather API", "Leaflet", "CSS Modules"],
-    liveUrl: "https://demo-weather.com",
-    githubUrl: "https://github.com/demo/weather",
-    category: "Frontend",
+    title: "Dishub Vehicle Test Reminder System",
+    description:
+      "Automated reminder system for vehicle testing schedules, built to send notifications and manage data efficiently.",
+    image: "https://images.unsplash.com/photo-1581091870627-3b1b14b9a5b0?w=600&h=400&fit=crop",
+    tech: ["Python", "Flask", "SQLite", "Bootstrap"],
+    liveUrl: "",
+    githubUrl: "https://github.com/nowelliswell/dishub-reminder",
+    category: "Backend",
+  },
+  {
+    id: 7,
+    title: "Book Management REST API",
+    description:
+      "RESTful API for managing book data with CRUD operations using Golang, PostgreSQL, and ORM integration.",
+    image: "https://images.unsplash.com/photo-1584697964403-8a2c9a1fd806?w=600&h=400&fit=crop",
+    tech: ["Go", "GORM", "PostgreSQL"],
+    liveUrl: "",
+    githubUrl: "https://github.com/nowelliswell/BookManagementAPIwithGolang",
+    category: "Backend API",
+  },
+  {
+    id: 8,
+    title: "Task Manager REST API",
+    description:
+      "Backend task management API built with Dart using the Shelf framework, featuring structured routing and database integration.",
+    image: "https://images.unsplash.com/photo-1584697964404-1a2b9c1fe807?w=600&h=400&fit=crop",
+    tech: ["Dart", "Shelf", "PostgreSQL"],
+    liveUrl: "",
+    githubUrl: "https://github.com/nowelliswell/Task-Manager-API",
+    category: "Backend API",
   },
 ];
+
 
 const categories = ["All", "Fullstack", "Frontend", "Backend"];
 

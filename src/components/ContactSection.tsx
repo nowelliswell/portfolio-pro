@@ -22,7 +22,7 @@ const contactInfo = [
     icon: Phone,
     label: "Phone",
     value: "+6285701733651",
-    href: "tel:+6285701733651",
+    href: "https://wa.me/6285701733651",
   },
 ];
 
@@ -39,12 +39,28 @@ export function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Get form data
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const subject = formData.get('subject') as string;
+    const message = formData.get('message') as string;
+
+    // Format WhatsApp message
+    const whatsappMessage = `*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
+    
+    // WhatsApp number (without + and spaces)
+    const phoneNumber = '6285701733651';
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
 
     toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      title: "Redirecting to WhatsApp",
+      description: "You'll be redirected to WhatsApp to send your message.",
     });
 
     setIsSubmitting(false);

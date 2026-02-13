@@ -1,39 +1,41 @@
-import { Award, ExternalLink, Calendar } from "lucide-react";
+import { Award, ExternalLink, Calendar, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const certifications = [
   {
     id: 1,
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "Dec 2023",
-    credentialUrl: "https://aws.amazon.com/certification/",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=120&fit=crop",
+    title: "Junior Web Programmer",
+    issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
+    date: "2024",
+    credentialUrl: "https://www.linkedin.com/in/noelino-grevansha-b4ba19215/overlay/Certifications/1494626304/treasury/?profileId=ACoAADZvHCsBW-gKIzQDPwNmGddBm3D-XqP8l6w",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&h=120&fit=crop",
   },
   {
     id: 2,
-    title: "Professional React Developer",
-    issuer: "Meta",
-    date: "Aug 2023",
-    credentialUrl: "https://www.meta.com/certification/",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=200&h=120&fit=crop",
+    title: "Python Programming",
+    issuer: "Dicoding Indonesia",
+    date: "2024",
+    credentialUrl: "https://www.dicoding.com/certificates/KEXLY10G0ZG2",
+    image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=200&h=120&fit=crop",
   },
   {
     id: 3,
-    title: "Node.js Application Developer",
-    issuer: "OpenJS Foundation",
-    date: "Mar 2023",
-    credentialUrl: "https://openjsf.org/certification/",
-    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=200&h=120&fit=crop",
+    title: "Project Management",
+    issuer: "Microsoft",
+    date: "2023",
+    credentialUrl: "https://www.linkedin.com/in/noelino-grevansha-b4ba19215/overlay/Certifications/1514853635/treasury/?profileId=ACoAADZvHCsBW-gKIzQDPwNmGddBm3D-XqP8l6w",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=200&h=120&fit=crop",
   },
   {
     id: 4,
-    title: "Google Cloud Professional Developer",
-    issuer: "Google",
-    date: "Nov 2022",
-    credentialUrl: "https://cloud.google.com/certification/",
-    image: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=200&h=120&fit=crop",
+    title: "Digital Marketing",
+    issuer: "Microsoft",
+    date: "2023",
+    credentialUrl: "https://www.linkedin.com/in/noelino-grevansha-b4ba19215/overlay/Certifications/2036098289/treasury/?profileId=ACoAADZvHCsBW-gKIzQDPwNmGddBm3D-XqP8l6w",
+    image: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=200&h=120&fit=crop",
   },
 ];
+
 
 export function CertificationsSection() {
   return (
@@ -91,6 +93,20 @@ export function CertificationsSection() {
               </div>
             </a>
           ))}
+        </div>
+
+        {/* View More Button */}
+        <div className="flex justify-center mt-12">
+          <Button variant="hero" size="lg" asChild>
+            <a
+              href="https://www.linkedin.com/in/noelino-grevansha-b4ba19215/details/certifications/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View All Certifications
+              <ArrowRight className="ml-2" size={20} />
+            </a>
+          </Button>
         </div>
       </div>
     </section>
