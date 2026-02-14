@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contactInfo = [
   {
@@ -34,6 +35,7 @@ const socialLinks = [
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { ref, isVisible } = useScrollAnimation();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -68,10 +70,10 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-card/50">
+    <section id="contact" className="section-padding bg-card/50" ref={ref}>
       <div className="section-container">
         {/* Header */}
-        <div className="text-center space-y-4 mb-16">
+        <div className={`text-center space-y-4 mb-16 scroll-fade-in ${isVisible ? 'visible' : ''}`}>
           <p className="text-primary font-mono text-sm tracking-wider">06. Contact</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Get In Touch
@@ -84,7 +86,7 @@ export function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Form */}
-          <div className="p-6 md:p-8 rounded-xl card-gradient border border-border">
+          <div className={`p-6 md:p-8 rounded-xl card-gradient border border-border scroll-slide-left ${isVisible ? 'visible' : ''}`}>
             <h3 className="text-xl font-semibold text-foreground mb-6">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
@@ -159,7 +161,7 @@ export function ContactSection() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className={`space-y-8 scroll-slide-right ${isVisible ? 'visible' : ''}`}>
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-6">Contact Info</h3>
               <div className="space-y-4">
@@ -199,10 +201,13 @@ export function ContactSection() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 rounded-lg bg-secondary/30 border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+                    className="p-4 rounded-lg bg-secondary/30 border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-all inline-block"
                     aria-label={social.label}
+                    style={{ textDecoration: 'none' }}
                   >
-                    <social.icon size={24} />
+                    <span className="inline-flex items-center justify-center">
+                      <social.icon size={24} />
+                    </span>
                   </a>
                 ))}
               </div>

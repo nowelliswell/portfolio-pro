@@ -22,8 +22,8 @@ export function Footer() {
         <div className="flex flex-col items-center gap-8">
           {/* Logo */}
           <a href="#" className="text-2xl font-bold">
-            <span className="gradient-text">Dev</span>
-            <span className="text-foreground">Folio</span>
+            <span className="gradient-text">Noel</span>
+            <span className="text-foreground">Porto</span>
           </a>
 
           {/* Navigation */}
@@ -47,10 +47,13 @@ export function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors inline-block"
                 aria-label={social.label}
+                style={{ textDecoration: 'none' }}
               >
-                <social.icon size={20} />
+                <span className="inline-flex items-center justify-center">
+                  <social.icon size={20} />
+                </span>
               </a>
             ))}
           </div>

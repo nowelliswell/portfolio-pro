@@ -19,7 +19,7 @@ export function Navbar() {
       <div className="section-container">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="text-xl font-bold gradient-text">
-            Dev<span className="text-foreground">Folio</span>
+            Noel<span className="text-foreground">Porto</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -33,8 +33,14 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Button variant="hero" size="sm">
-              Hire Me
+            <Button variant="hero" size="sm" asChild>
+              <a 
+                href="https://wa.me/6285701733651?text=Hi%20Noel%2C%20I%27m%20interested%20in%20hiring%20you%20for%20a%20project"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hire Me
+              </a>
             </Button>
           </div>
 
@@ -62,8 +68,14 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <Button variant="hero" size="sm" className="w-fit">
-                Hire Me
+              <Button variant="hero" size="sm" className="w-fit" asChild>
+                <a 
+                  href="https://wa.me/6285701733651?text=Hi%20Noel%2C%20I%27m%20interested%20in%20hiring%20you%20for%20a%20project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Hire Me
+                </a>
               </Button>
             </div>
           </div>

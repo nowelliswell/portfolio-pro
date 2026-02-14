@@ -1,5 +1,6 @@
 import { Award, ExternalLink, Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const certifications = [
   {
@@ -38,11 +39,13 @@ const certifications = [
 
 
 export function CertificationsSection() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section id="certifications" className="section-padding">
+    <section id="certifications" className="section-padding" ref={ref}>
       <div className="section-container">
         {/* Header */}
-        <div className="text-center space-y-4 mb-16">
+        <div className={`text-center space-y-4 mb-16 scroll-fade-in ${isVisible ? 'visible' : ''}`}>
           <p className="text-primary font-mono text-sm tracking-wider">05. Certifications</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Professional Credentials
@@ -54,23 +57,25 @@ export function CertificationsSection() {
 
         {/* Certifications Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {certifications.map((cert) => (
+          {certifications.map((cert, index) => (
             <a
               key={cert.id}
               href={cert.credentialUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block rounded-xl overflow-hidden card-gradient border border-border hover:border-primary/50 hover-lift"
+              className={`group block rounded-xl overflow-hidden card-gradient border border-border hover:border-primary/50 hover-lift scroll-scale-up stagger-${Math.min(index + 1, 4)} ${isVisible ? 'visible' : ''}`}
             >
               {/* Image */}
               <div className="relative aspect-[5/3] overflow-hidden">
                 <img
                   src={cert.image}
-                  alt={cert.title}
+                  alt={`${cert.title} certification from ${cert.issuer}`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-                <div className="absolute top-3 right-3 p-2 rounded-lg bg-primary/20 text-primary">
+                <div className="absolute top-3 right-3 p-2 rounded-lg bg-primary/20 text-primary" aria-hidden="true">
                   <Award size={20} />
                 </div>
               </div>

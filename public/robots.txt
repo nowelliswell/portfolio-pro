@@ -12,3 +12,13 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://github.com/nowelliswell/portfolio-pro/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Disallow specific paths (if any)
+Disallow: /api/
+Disallow: /*.json$

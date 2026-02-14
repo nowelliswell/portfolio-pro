@@ -1,4 +1,5 @@
 import { Code, Database, Globe, Layers, Server, Wrench } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const skillCategories = [
   {
@@ -35,11 +36,13 @@ const skillCategories = [
 
 
 export function SkillsSection() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section id="skills" className="section-padding bg-card/50">
+    <section id="skills" className="section-padding bg-card/50" ref={ref}>
       <div className="section-container">
         {/* Header */}
-        <div className="text-center space-y-4 mb-16">
+        <div className={`text-center space-y-4 mb-16 scroll-fade-in ${isVisible ? 'visible' : ''}`}>
           <p className="text-primary font-mono text-sm tracking-wider">02. Skills</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Technologies & Tools
@@ -54,8 +57,7 @@ export function SkillsSection() {
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
-              className="group p-6 rounded-xl card-gradient border border-border hover:border-primary/50 hover-lift"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`group p-6 rounded-xl card-gradient border border-border hover:border-primary/50 hover-lift scroll-scale-up stagger-${Math.min(index + 1, 4)} ${isVisible ? 'visible' : ''}`}
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">

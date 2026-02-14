@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ExternalLink, Github, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import hospitalRegPortalImg from "@/assets/hospital-reg-portal.png";
 import coffeordersystem from "@/assets/coffe-order-system.png";
 import clothbrand from "@/assets/clothbrand.png"
@@ -41,7 +42,7 @@ const projects = [
     githubUrl: "https://github.com/nowelliswell/CoffeShop-System",
     category: "Frontend",
   },
-  {
+  /*{
     id: 4,
     title: "SIMRS Error Reporting System",
     description:
@@ -52,7 +53,7 @@ const projects = [
     githubUrl: "https://github.com/nowelliswell/laporan_sistem_simrs",
     category: "Backend",
   },
-  {
+  /*{
     id: 5,
     title: "Face Recognition Attendance System",
     description:
@@ -95,7 +96,7 @@ const projects = [
     liveUrl: "",
     githubUrl: "https://github.com/nowelliswell/Task-Manager-API",
     category: "Backend API",
-  },
+  },*/
 ];
 
 
@@ -103,16 +104,17 @@ const categories = ["All", "Fullstack", "Frontend", "Backend"];
 
 export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const { ref, isVisible } = useScrollAnimation();
 
   const filteredProjects = activeFilter === "All"
     ? projects
     : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="projects" className="section-padding">
+    <section id="projects" className="section-padding" ref={ref}>
       <div className="section-container">
         {/* Header */}
-        <div className="text-center space-y-4 mb-12">
+        <div className={`text-center space-y-4 mb-12 scroll-fade-in ${isVisible ? 'visible' : ''}`}>
           <p className="text-primary font-mono text-sm tracking-wider">03. Portfolio</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Live Demo Projects
@@ -140,16 +142,18 @@ export function ProjectsSection() {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <article
               key={project.id}
-              className="group rounded-xl overflow-hidden card-gradient border border-border hover:border-primary/50 hover-lift"
+              className={`group rounded-xl overflow-hidden card-gradient border border-border hover:border-primary/50 hover-lift scroll-scale-up stagger-${Math.min(index + 1, 4)} ${isVisible ? 'visible' : ''}`}
             >
               {/* Image */}
               <div className="relative overflow-hidden aspect-video">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} - ${project.description}`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />

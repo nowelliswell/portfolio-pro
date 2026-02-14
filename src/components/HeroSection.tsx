@@ -4,12 +4,17 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      aria-label="Hero section"
+    >
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0" aria-hidden="true">
         <img
           src={heroBg}
-          alt="Developer workspace"
+          alt=""
+          loading="eager"
+          decoding="async"
           className="w-full h-full object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
@@ -19,7 +24,7 @@ export function HeroSection() {
       <div className="relative z-10 section-container text-center pt-20">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Greeting */}
-          <p className="text-primary font-mono text-sm tracking-wider animate-fade-up">
+          <p className="text-primary font-mono text-sm tracking-wider animate-fade-up" role="doc-subtitle">
             Hi, my name is
           </p>
 
@@ -41,54 +46,60 @@ export function HeroSection() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4 animate-fade-up-delay-3">
+          <nav className="flex flex-wrap items-center justify-center gap-4 pt-4 animate-fade-up-delay-3" aria-label="Primary actions">
             <Button variant="hero" size="xl" asChild>
               <a href="#projects">
                 View Projects
-                <ArrowDown className="ml-2 animate-bounce" size={20} />
+                <ArrowDown className="ml-2 animate-bounce" size={20} aria-hidden="true" />
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <a href="/cv-noel.pdf" download>
-                <Download size={20} />
+              <a href="/cv-noel.pdf" download aria-label="Download CV (PDF)">
+                <Download size={20} aria-hidden="true" />
                 Download CV
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
               <a href="#contact">
-                <Mail size={20} />
+                <Mail size={20} aria-hidden="true" />
                 Contact Me
               </a>
             </Button>
-          </div>
+          </nav>
 
           {/* Social Links */}
-          <div className="flex items-center justify-center gap-6 pt-8 animate-fade-up-delay-3">
+          <nav className="flex items-center justify-center gap-6 pt-8 animate-fade-up-delay-3" aria-label="Social media links">
             <a
               href="https://github.com/nowelliswell"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="GitHub"
+              className="text-muted-foreground hover:text-primary transition-colors inline-block"
+              aria-label="GitHub profile"
+              style={{ textDecoration: 'none' }}
             >
-              <Github size={24} />
+              <span className="inline-flex items-center justify-center">
+                <Github size={24} aria-hidden="true" />
+              </span>
             </a>
             <a
               href="https://www.linkedin.com/in/noelino-grevansha-b4ba19215/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="LinkedIn"
+              className="text-muted-foreground hover:text-primary transition-colors inline-block"
+              aria-label="LinkedIn profile"
+              style={{ textDecoration: 'none' }}
             >
-              <Linkedin size={24} />
+              <span className="inline-flex items-center justify-center">
+                <Linkedin size={24} aria-hidden="true" />
+              </span>
             </a>
-          </div>
+          </nav>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
+        <a href="#about" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Scroll to about section">
           <ArrowDown size={24} />
         </a>
       </div>

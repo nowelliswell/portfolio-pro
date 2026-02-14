@@ -1,5 +1,6 @@
 import { Calendar, MapPin, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const experiences = [
   {
@@ -93,11 +94,13 @@ const experiences = [
 
 
 export function ExperienceSection() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section id="experience" className="section-padding bg-card/50">
+    <section id="experience" className="section-padding bg-card/50" ref={ref}>
       <div className="section-container">
         {/* Header */}
-        <div className="text-center space-y-4 mb-16">
+        <div className={`text-center space-y-4 mb-16 scroll-fade-in ${isVisible ? 'visible' : ''}`}>
           <p className="text-primary font-mono text-sm tracking-wider">04. Experience</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Where I've Worked
@@ -117,7 +120,7 @@ export function ExperienceSection() {
             {experiences.map((exp, index) => (
               <div
                 key={exp.id}
-                className={`relative flex flex-col md:flex-row gap-8 ${
+                className={`relative flex flex-col md:flex-row gap-8 scroll-fade-in stagger-${Math.min(index + 1, 4)} ${isVisible ? 'visible' : ''} ${
                   index % 2 === 0 ? "md:flex-row-reverse" : ""
                 }`}
               >

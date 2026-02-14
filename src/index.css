@@ -69,11 +69,14 @@
 
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -82,6 +85,22 @@
 
   code, pre {
     font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Improve touch targets for mobile */
+  @media (max-width: 768px) {
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
+  /* Prevent text size adjustment on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 }
 
@@ -166,6 +185,99 @@
   .link-underline:hover::after {
     @apply scale-x-100;
   }
+
+  /* Scroll animations */
+  .scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scroll-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scroll-scale-up {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-scale-up.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .stagger-1 {
+    transition-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    transition-delay: 0.2s;
+  }
+
+  .stagger-3 {
+    transition-delay: 0.3s;
+  }
+
+  .stagger-4 {
+    transition-delay: 0.4s;
+  }
+
+  /* Remove any pseudo-elements from social media links and external links */
+  a[aria-label="GitHub"],
+  a[aria-label="LinkedIn"],
+  a[aria-label="Twitter"] {
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  a[aria-label="GitHub"]::before,
+  a[aria-label="GitHub"]::after,
+  a[aria-label="LinkedIn"]::before,
+  a[aria-label="LinkedIn"]::after,
+  a[aria-label="Twitter"]::before,
+  a[aria-label="Twitter"]::after,
+  a[target="_blank"]::before,
+  a[target="_blank"]::after,
+  a[rel*="noopener"]::before,
+  a[rel*="noopener"]::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-image: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* Ensure social icons only show their SVG content */
+  a[aria-label] svg {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @keyframes fadeUp {
@@ -195,4 +307,11 @@
   50% {
     box-shadow: 0 0 40px hsl(160 84% 39% / 0.4);
   }
+}
+
+/* Animated Background Canvas */
+canvas {
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
 }
