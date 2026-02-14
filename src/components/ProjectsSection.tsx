@@ -5,8 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import hospitalRegPortalImg from "@/assets/hospital-reg-portal.png";
 import coffeordersystem from "@/assets/coffe-order-system.png";
-import clothbrand from "@/assets/clothbrand.png"
-import reportingweb from "@/assets/reportingsysm.png"
+import clothbrand from "@/assets/clothbrand.png";
+import reportingweb from "@/assets/reportingsysm.png";
+import dental from "@/assets/dental-clinic.png"
 
 const projects = [
   {
@@ -42,8 +43,19 @@ const projects = [
     githubUrl: "https://github.com/nowelliswell/CoffeShop-System",
     category: "Frontend",
   },
-  /*{
+  {
     id: 4,
+    title: "Dental Clinic Website",
+    description:
+      "Professional dental clinic website featuring appointment booking, service information, and modern healthcare UI design for patient engagement.",
+    image: dental,
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://dental-clinic-web-olive.vercel.app/",
+    githubUrl: "https://github.com/nowelliswell/dental-clinic-web",
+    category: "Frontend",
+  },
+  {
+    id: 5,
     title: "SIMRS Error Reporting System",
     description:
       "Web-based reporting system to document and track hospital SIMRS issues, helping IT teams monitor and resolve system problems efficiently.",
