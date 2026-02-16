@@ -7,7 +7,7 @@ import hospitalRegPortalImg from "@/assets/hospital-reg-portal.png";
 import coffeordersystem from "@/assets/coffe-order-system.png";
 import clothbrand from "@/assets/clothbrand.png";
 import reportingweb from "@/assets/reportingsysm.png";
-import dental from "@/assets/dental-clinic.png"
+import dental from "@/assets/dental-clinic.png";
 
 const projects = [
   {
@@ -70,7 +70,7 @@ const projects = [
     title: "Property Hub - Real Estate Platform",
     description:
       "Modern property listing and management platform with advanced search, filtering, and responsive design for seamless property browsing experience.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+    image: perumahan,
     tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     liveUrl: "https://property-hub-pro.vercel.app/",
     githubUrl: "https://github.com/nowelliswell/property-hub-pro",
