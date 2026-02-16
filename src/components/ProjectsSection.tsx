@@ -65,8 +65,19 @@ const projects = [
     githubUrl: "https://github.com/nowelliswell/laporan_sistem_simrs",
     category: "Backend",
   },
+  {
+    id: 6,
+    title: "Property Hub - Real Estate Platform",
+    description:
+      "Modern property listing and management platform with advanced search, filtering, and responsive design for seamless property browsing experience.",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    liveUrl: "https://property-hub-pro.vercel.app/",
+    githubUrl: "https://github.com/nowelliswell/property-hub-pro",
+    category: "Fullstack",
+  },
   /*{
-    id: 5,
+    id: 7,
     title: "Face Recognition Attendance System",
     description:
       "Automated attendance system utilizing face recognition technology to identify users and store attendance records in a database.",
@@ -77,7 +88,7 @@ const projects = [
     category: "AI / Backend",
   },
   {
-    id: 6,
+    id: 8,
     title: "Dishub Vehicle Test Reminder System",
     description:
       "Automated reminder system for vehicle testing schedules, built to send notifications and manage data efficiently.",
@@ -88,7 +99,7 @@ const projects = [
     category: "Backend",
   },
   {
-    id: 7,
+    id: 9,
     title: "Book Management REST API",
     description:
       "RESTful API for managing book data with CRUD operations using Golang, PostgreSQL, and ORM integration.",
@@ -99,7 +110,7 @@ const projects = [
     category: "Backend API",
   },
   {
-    id: 8,
+    id: 10,
     title: "Task Manager REST API",
     description:
       "Backend task management API built with Dart using the Shelf framework, featuring structured routing and database integration.",
@@ -110,6 +121,7 @@ const projects = [
     category: "Backend API",
   },*/
 ];
+
 
 
 const categories = ["All", "Fullstack", "Frontend", "Backend"];
