@@ -16,6 +16,25 @@ export function SEO({
   canonical = "https://noel-porto.vercel.app/",
 }: SEOProps) {
   useEffect(() => {
+    // CRITICAL: Add Google verification FIRST before anything else
+    const addGoogleVerification = () => {
+      let googleMeta = document.querySelector('meta[name="google-site-verification"]');
+      if (!googleMeta) {
+        googleMeta = document.createElement("meta");
+        googleMeta.setAttribute("name", "google-site-verification");
+        googleMeta.setAttribute("content", "LOE-lI6Tb5EZT7IvN5MW1XXBsJfZb8JMnFkagAYroYQ");
+        // Insert at the beginning of head
+        if (document.head.firstChild) {
+          document.head.insertBefore(googleMeta, document.head.firstChild);
+        } else {
+          document.head.appendChild(googleMeta);
+        }
+        console.log("✅ Google verification meta tag added!");
+      }
+    };
+    
+    addGoogleVerification();
+    
     // Update title
     document.title = title;
 
