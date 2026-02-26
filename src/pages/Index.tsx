@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
@@ -11,19 +10,6 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 
 const Index = () => {
-  // SEO: Update document title and meta description dynamically
-  useEffect(() => {
-    document.title = "Noel Porto | Noel Grevansha - Fullstack Web Developer Portfolio";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Noel Porto - Portfolio website of Noel Grevansha, Junior Web Developer and IT Support specialist. Showcasing projects, skills, and experience in modern web development with React, TypeScript, and Node.js."
-      );
-    }
-  }, []);
-
   return (
     <>
       <SEO />
