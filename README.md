@@ -1,11 +1,24 @@
 # Noel Porto | Noel Grevansha - Portfolio Website
 
-Portfolio website showcasing my work as a Junior Web Developer and IT Support specialist.
+🌐 **Live Site:** https://noel-porto.vercel.app/  
+📦 **Repository:** https://github.com/nowelliswell/portfolio-pro
 
-## 🚀 Live Demo
+Portfolio website showcasing my work as a Fullstack Web Developer and IT Support specialist.
 
-**Website**: https://noel-porto.vercel.app/  
-**Repository**: https://github.com/nowelliswell/portfolio-pro
+---
+
+## 🎯 Quick Summary
+
+Website ini sudah **FULLY OPTIMIZED untuk SEO** dengan:
+- ✅ Meta tags lengkap (title, description, keywords, OG, Twitter)
+- ✅ Structured data (JSON-LD Person + WebSite schema)
+- ✅ Sitemap.xml untuk search engine crawlers
+- ✅ Robots.txt configured untuk semua major search engines
+- ✅ Fast loading dengan Vite optimization
+- ✅ Mobile responsive design
+- ✅ Deployed di Vercel dengan custom domain
+
+**Keyword Target:** `noel-porto`, `noel porto`, `Noel Grevansha`, `fullstack web developer`
 
 ---
 
