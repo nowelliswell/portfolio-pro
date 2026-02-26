@@ -5,9 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Base URL for GitHub Pages deployment
-  // Change this to '/' if deploying to custom domain
-  base: mode === 'production' ? '/portfolio-pro/' : '/',
+  // Base URL - '/' for Vercel/custom domain, '/portfolio-pro/' for GitHub Pages
+  base: '/',
   
   server: {
     host: "::",

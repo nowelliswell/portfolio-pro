@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://nowelliswell.github.io/portfolio-pro/sitemap.xml
+Sitemap: https://noel-porto.vercel.app/sitemap.xml
 
 # Specific bots
 User-agent: Googlebot
