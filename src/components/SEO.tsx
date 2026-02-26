@@ -9,23 +9,25 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = "Noel Grevansha - Fullstack Web Developer & IT Support Specialist",
-  description = "Experienced Fullstack Web Developer and IT Support Specialist specializing in React, TypeScript, Node.js, Python, and modern web technologies. Available for freelance projects and full-time opportunities.",
-  keywords = "web developer, fullstack developer, IT support, React developer, TypeScript, Node.js, Python, Flask, portfolio, Noel Grevansha",
+  title = "Noel Porto | Noel Grevansha - Fullstack Web Developer & IT Support Specialist",
+  description = "Noel Porto - Experienced Fullstack Web Developer and IT Support Specialist specializing in React, TypeScript, Node.js, Python, and modern web technologies. Available for freelance projects and full-time opportunities.",
+  keywords = "noel-porto, noel porto, Noel Grevansha, web developer, fullstack developer, IT support, React developer, TypeScript, Node.js, Python, Flask, portfolio, web development Indonesia, nowelliswell",
   ogImage = "/og-image.jpg",
-  canonical = "https://github.com/nowelliswell/portfolio-pro",
+  canonical = "https://noel-porto.vercel.app/",
 }: SEOProps) {
   useEffect(() => {
     // Update title
     document.title = title;
 
-    // Update meta tags
+    // Update meta tags including Google verification
     const metaTags = [
       { name: "description", content: description },
       { name: "keywords", content: keywords },
+      { name: "google-site-verification", content: "LOE-lI6Tb5EZT7IvN5MW1XXBsJfZb8JMnFkagAYroYQ" },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:image", content: ogImage },
+      { property: "og:url", content: canonical },
       { property: "twitter:title", content: title },
       { property: "twitter:description", content: description },
       { property: "twitter:image", content: ogImage },
