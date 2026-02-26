@@ -5,6 +5,9 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // SEO: Update title for 404 page
+    document.title = "404 - Page Not Found | Noel Porto";
+    
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 
