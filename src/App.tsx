@@ -6,24 +6,36 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <AnimatedBackground />
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  // CRITICAL: Add Google verification meta tag immediately on app load
+  useEffect(() => {
+    const meta = document.createElement('meta');
+    meta.name = 'google-site-verification';
+    meta.content = 'LOE-lI6Tb5EZT7IvN5MW1XXBsJfZb8JMnFkagAYroYQ';
+    document.head.appendChild(meta);
+    console.log('✅ Google verification added in App.tsx');
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <AnimatedBackground />
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
