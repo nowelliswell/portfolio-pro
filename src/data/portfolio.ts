@@ -10,7 +10,7 @@ export const profile = {
   locationUrl: "https://bit.ly/4sRqF3H",
   github: "https://github.com/nowelliswell",
   linkedin: "https://www.linkedin.com/in/noelino-grevansha-b4ba19215/",
-  portrait: "https://noel-porto.vercel.app/assets/pas-foto-C0GRp_Ff.png",
+  portrait: "PAS FOTO NOEL UPDATE.png",
 };
 
 export const sections = [
