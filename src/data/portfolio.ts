@@ -86,7 +86,7 @@ export const projects: Project[] = [
     description:
       "Outpatient registration web application that streamlines hospital registration workflows with a clean, structured interface.",
     tags: ["TypeScript", "HTML", "CSS"],
-    image: "https://noel-porto.vercel.app/assets/hospital-reg-portal-ug_80CRC.png",
+    image: "checkin-rs.png",
     demo: "https://hospitally-register-portal.vercel.app/",
     code: "https://github.com/nowelliswell/hospitally-register-portal",
   },
@@ -96,27 +96,27 @@ export const projects: Project[] = [
     description:
       "Property listing and management platform with advanced search, filtering, and a responsive browsing experience.",
     tags: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    image: "https://noel-porto.vercel.app/assets/realestate-aJdNdCUg.png",
+    image: "property-web.png",
     demo: "https://property-hub-pro.vercel.app/",
     code: "https://github.com/nowelliswell/property-hub-pro",
   },
-  {
-    title: "SIMRS Error Reporting System",
-    category: "Backend",
-    description:
-      "Web-based reporting system to document and track hospital SIMRS issues, helping IT teams resolve problems efficiently.",
-    tags: ["Python", "Flask", "HTML"],
-    image: "https://noel-porto.vercel.app/assets/reportingsysm-kuI2rhdp.png",
-    demo: "https://laporansistemsimrs-production.up.railway.app/dashboard",
-    code: "https://github.com/nowelliswell/laporan_sistem_simrs",
-  },
+  // {
+  //   title: "SIMRS Error Reporting System",
+  //   category: "Backend",
+  //   description:
+  //     "Web-based reporting system to document and track hospital SIMRS issues, helping IT teams resolve problems efficiently.",
+  //   tags: ["Python", "Flask", "HTML"],
+  //   image: "https://noel-porto.vercel.app/assets/reportingsysm-kuI2rhdp.png",
+  //   demo: "https://laporansistemsimrs-production.up.railway.app/dashboard",
+  //   code: "https://github.com/nowelliswell/laporan_sistem_simrs",
+  // },
   {
     title: "Dental Clinic Website",
     category: "Frontend",
     description:
       "Professional dental clinic site with appointment booking, service information, and modern healthcare UI.",
     tags: ["React", "TypeScript", "Tailwind CSS"],
-    image: "https://noel-porto.vercel.app/assets/dental-clinic-DUzXujif.png",
+    image: "dental-web.png",
     demo: "https://dental-clinic-web-olive.vercel.app/",
     code: "https://github.com/nowelliswell/dental-clinic-web",
   },
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     description:
       "Responsive fashion brand website with modern UI design, product showcase, and smooth user experience.",
     tags: ["React", "JavaScript", "CSS"],
-    image: "https://noel-porto.vercel.app/assets/clothbrand-GHxFB9BS.png",
+    image: "cloth-web.png",
     demo: "https://cloth-brand-tawny.vercel.app/",
     code: "https://github.com/nowelliswell/cloth-brand",
   },
@@ -136,7 +136,7 @@ export const projects: Project[] = [
     description:
       "Interactive coffee shop web app with menu display and ordering interface built on modern frontend tooling.",
     tags: ["React", "Vite", "JavaScript"],
-    image: "https://noel-porto.vercel.app/assets/coffe-order-system-DAVzXjA2.png",
+    image: "coffee-web.png",
     demo: "https://coffeshopsystem.netlify.app/",
     code: "https://github.com/nowelliswell/CoffeShop-System",
   },
